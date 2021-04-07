@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"></meta>
+        <link rel="stylesheet" href="style.css" type="text/css"></link>
+        <title>首頁</title>
+    </head>
+    <body>
+        <header>
+            <div class="slogan">歡迎光臨，這是會員頁</div>
+        </header>
+        <div class="title">{{name}}，歡迎登入系統</div>
+            <div class="box">
+                <a href="/signout">登出系統</a>
+            </div>
+        <div class="title">
+            <div>查詢會員姓名</div>
+            <div class="button">
+                <input id = "search" type="text" class="text">
+                <button id="btn" onclick="getData();">查詢</button>
+            </div>
+            <div class="userlog" id="userlog"></div>
+        </div>
+        <script>
+            function getData() {
+                var req = new XMLHttpRequest();
+                let search = document.getElementById('search');
+                let api = "http://127.0.0.1:3000/api/users?username=" + search.value;
+                req.open("get", api)
+                req.onload = function() {
+                    let data = JSON.parse(this.responseText);
+
+                    userlog = document.getElementById('userlog');
+                    let name = data.data.name;
+                    let username = data.data.username;
+
+                    result = name+"("+username+")";
+                    userlog.append(result)
+                }
+                req.send();
+            }
+        </script>
+    </body>
+</html>

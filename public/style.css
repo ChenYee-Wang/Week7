@@ -1,0 +1,49 @@
+body {
+    margin:0px;
+}
+​
+.slogan {
+    height:100px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 48, 65);
+    color:white;
+    font-size:2em;
+    font-weight:bold
+}
+​
+.content {
+    max-width:1200px;
+    padding:10px;
+    margin:auto;
+}
+​
+.title {
+    text-align:center;
+    font-size:1.4em;
+    font-weight:bold;
+    margin:20px 0px;
+}
+​
+.box {
+    display:flex;
+    flex:none;
+    justify-content: center;
+    align-items: center;
+    margin:20px 0px;
+}
+​
+.name {
+    font-size:20px;
+    margin:0px 10px;
+}
+​
+.button {
+    display:flex;
+    justify-content: center;
+}
+​
+#btn {
+    padding:5px 10px;
+}
